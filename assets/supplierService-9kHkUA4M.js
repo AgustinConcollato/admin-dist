@@ -1,0 +1,1 @@
+import{$ as p}from"./index-bgz6yG4j.js";class i{async getAll(){return p("/suppliers",{method:"GET"})}async createSupplier(e){return p("/suppliers",{method:"POST",body:e})}async updateSupplier(e,r){return p(`/suppliers/${r}`,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)})}}export{i as S};
