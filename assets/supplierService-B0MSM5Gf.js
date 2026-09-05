@@ -1,0 +1,1 @@
+import{a0 as p}from"./index-Dkt_teVI.js";class a{async getAll(){return p("/suppliers",{method:"GET"})}async createSupplier(e){return p("/suppliers",{method:"POST",body:e})}async updateSupplier(e,r){return p(`/suppliers/${r}`,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(e)})}}export{a as S};

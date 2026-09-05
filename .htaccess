@@ -1,3 +1,18 @@
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# El service worker y el manifest se revalidan siempre, para que una version
+# vieja no quede cacheada e impida las actualizaciones de la app.
+<IfModule mod_headers.c>
+  <FilesMatch "^(sw|registerSW)\.js$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "^manifest\.webmanifest$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
